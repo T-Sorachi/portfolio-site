@@ -1590,7 +1590,7 @@ main {
 
   .header--menu-open .header__logo {
     position: relative;
-    z-index: 22;
+    z-index: 20;
   }
 
   main {
