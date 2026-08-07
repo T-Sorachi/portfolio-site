@@ -773,7 +773,7 @@ main {
   color: var(--bg);
   font-family: 'Times New Roman', Times, serif;
   font-size: 16px;
-  font-weight: 600あ;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: 0.12em;
   text-align: center;
@@ -1188,6 +1188,16 @@ main {
   font-weight: 500;
   line-height: 36px;
   letter-spacing: 0.2em;
+}
+
+.about-page__description,
+.about-page__vision-text,
+.work-detail__meta p,
+.work-detail__description p {
+  font-family: 'Yu Gothic Medium', 'Yu Gothic', 'YuGothic', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  font-weight: 500;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 .work-detail__images {
