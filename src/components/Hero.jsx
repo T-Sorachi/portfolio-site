@@ -13,10 +13,12 @@ function Hero() {
             src={heroImg}
             alt="髙橋空知のプロフィール写真"
             className="hero__image--full"
+            fetchPriority="high"
+            decoding="async"
           />
 
           <div className="hero__overlay" aria-hidden>
-            <img src={copyImg} alt="" className="hero__copy-image" />
+            <img src={copyImg} alt="" className="hero__copy-image" decoding="async" />
           </div>
         </div>
 
@@ -24,6 +26,7 @@ function Hero() {
           src={halfCirclesImg}
           alt="装飾的な半円形の背景"
           className="hero__half-circles"
+          decoding="async"
         />
 
         <div className="hero__about">
@@ -53,6 +56,8 @@ function Hero() {
                 src={halfCircleAboutImg}
                 alt="more about icon"
                 className="hero__about-icon"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>

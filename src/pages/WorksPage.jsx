@@ -47,6 +47,8 @@ function WorksPage() {
                   src={work.heroImage}
                   alt={`${work.title}の作品画像`}
                   className="home-work__image"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="home-work__details">

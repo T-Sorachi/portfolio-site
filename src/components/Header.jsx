@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Header() {
   const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuButtonRef = useRef(null)
+  const navigationRef = useRef(null)
 
   useEffect(() => {
     if (!isMenuOpen) return undefined
@@ -11,11 +13,26 @@ function Header() {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') setIsMenuOpen(false)
     }
+    const handlePointerDown = (event) => {
+      if (
+        !navigationRef.current?.contains(event.target)
+        && !menuButtonRef.current?.contains(event.target)
+      ) {
+        setIsMenuOpen(false)
+      }
+    }
+    const handleResize = () => {
+      if (window.innerWidth > 700) setIsMenuOpen(false)
+    }
 
     window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('pointerdown', handlePointerDown)
+    window.addEventListener('resize', handleResize)
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('pointerdown', handlePointerDown)
+      window.removeEventListener('resize', handleResize)
     }
   }, [isMenuOpen])
 
@@ -39,6 +56,7 @@ function Header() {
 
         <button
           type="button"
+          ref={menuButtonRef}
           className="header__menu-button"
           aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
           aria-expanded={isMenuOpen}
@@ -50,7 +68,7 @@ function Header() {
           <span />
         </button>
 
-        <nav className="header__nav" id="site-navigation">
+        <nav className="header__nav" id="site-navigation" ref={navigationRef}>
           <Link to="/about" onClick={closeMenu}>ABOUT</Link>
           <Link to="/works" onClick={closeMenu}>WORKS</Link>
           <Link to="/contact" onClick={closeMenu}>CONTACT</Link>

@@ -70,6 +70,8 @@ function WorkDetailPage() {
           src={work.heroImage}
           alt={`${work.title}のメイン画像`}
           className="work-detail__hero"
+          fetchPriority="high"
+          decoding="async"
         />
 
         <div className="work-detail__rule" />
@@ -99,6 +101,8 @@ function WorkDetailPage() {
                 src={image}
                 alt={`${work.title} 詳細画像${index + 1}`}
                 className={`work-detail__image--${index + 1}`}
+                loading="lazy"
+                decoding="async"
                 key={image}
               />
             ))}

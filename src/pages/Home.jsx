@@ -4,6 +4,7 @@ import works from '../data/works'
 import worksCircleImg from '../assets/images/works-circle.png'
 import circleBlackImg from '../assets/images/circle-black.png'
 import kumoImg from '../assets/images/kumo2.png'
+import ContactForm from '../components/ContactForm'
 
 const formatCategory = (category) =>
   category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()
@@ -27,6 +28,8 @@ function Home() {
                   src={work.heroImage}
                   alt={`${work.title}の作品画像`}
                   className="home-work__image"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="home-work__details">
@@ -56,37 +59,7 @@ function Home() {
           <img src={kumoImg} alt="" />
         </div>
 
-        <form className="home-contact-form">
-          <label className="home-contact-form__row">
-            <span>お名前</span>
-            <input type="text" name="name" autoComplete="name" />
-          </label>
-
-          <label className="home-contact-form__row">
-            <span>メールアドレス</span>
-            <input type="email" name="email" autoComplete="email" />
-          </label>
-
-          <div className="home-contact-form__row">
-            <span>電話番号</span>
-            <div className="home-contact-form__phone">
-              <input type="tel" name="phone-1" aria-label="電話番号の最初の欄" />
-              <i aria-hidden>−</i>
-              <input type="tel" name="phone-2" aria-label="電話番号の中央の欄" />
-              <i aria-hidden>−</i>
-              <input type="tel" name="phone-3" aria-label="電話番号の最後の欄" />
-            </div>
-          </div>
-
-          <label className="home-contact-form__row home-contact-form__row--message">
-            <span>お問い合わせ内容</span>
-            <textarea name="message" />
-          </label>
-
-          <button type="button" className="home-contact-form__confirm">
-            入力内容を確認する
-          </button>
-        </form>
+        <ContactForm />
       </section>
     </main>
   )

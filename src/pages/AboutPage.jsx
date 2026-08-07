@@ -8,7 +8,7 @@ function AboutPage() {
 
       <section className="about-page__inner">
         <div className="about-page__image">
-          <img src={aboutImg} alt="髙橋空知のプロフィール写真" />
+          <img src={aboutImg} alt="髙橋空知のプロフィール写真" decoding="async" />
         </div>
 
         <div className="about-page__content">
@@ -41,6 +41,8 @@ function AboutPage() {
           src={logoImg}
           alt=""
           className="about-page__vision-logo"
+          loading="lazy"
+          decoding="async"
         />
 
         <p className="about-page__vision-text">
