@@ -1502,6 +1502,7 @@ main {
 
   .header > .header-inner {
     width: 100%;
+    backdrop-filter: blur(7px);
     padding-right: 16px;
     padding-left: 16px;
     grid-template-columns: auto minmax(0, 1fr) auto;
