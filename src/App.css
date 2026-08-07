@@ -1300,8 +1300,8 @@ main {
   position: relative;
   width: 100%;
   min-height: 80px;
-  margin-top: 120px;
-  padding: 24px clamp(36px, 7vw, 110px);
+  margin: 120px 0 -1px;
+  padding: 24px clamp(36px, 7vw, 110px) calc(24px + env(safe-area-inset-bottom));
   background: #000;
   color: #fff;
 }
@@ -2103,7 +2103,7 @@ main {
 
   .site-footer {
     min-height: 64px;
-    padding: 18px 20px;
+    padding: 18px 20px calc(18px + env(safe-area-inset-bottom));
   }
 
   .site-footer__cloud {
