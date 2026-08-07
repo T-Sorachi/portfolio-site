@@ -1498,11 +1498,13 @@ main {
     width: 100%;
     max-width: none;
     padding: 14px 0 8px;
+    background: rgba(255, 255, 255, 0.22);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
   }
 
   .header > .header-inner {
     width: 100%;
-    backdrop-filter: blur(7px);
     padding-right: 16px;
     padding-left: 16px;
     grid-template-columns: auto minmax(0, 1fr) auto;
