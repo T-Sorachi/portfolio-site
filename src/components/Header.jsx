@@ -12,11 +12,9 @@ function Header() {
       if (event.key === 'Escape') setIsMenuOpen(false)
     }
 
-    document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', handleKeyDown)
 
     return () => {
-      document.body.style.overflow = ''
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [isMenuOpen])
