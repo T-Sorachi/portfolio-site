@@ -1,0 +1,17 @@
+{
+  "title": "まるごと食堂／Webプロトタイプ",
+  "category": "Web design",
+  "heroImage": "/media/works/work_7.jpg",
+  "period": "2025年6月〜2025年8月",
+  "role": "",
+  "tool": "",
+  "location": "",
+  "projectScale": "",
+  "className": "Webデザイン",
+  "description": "Webデザインの授業で、神山まるごと高専の「まるごと食堂」を紹介するWebサイトのプロトタイプを制作しました。食堂の温かみや食堂での工夫が伝わるよう、写真やコピー、レイアウトに一貫性を持たせ、情報設計とビジュアルデザインを丁寧に組み立てました。学生の日常がリアルに感じられるよう、食堂の1日をストーリー仕立てで見せる工夫もしています。",
+  "detailImages": [
+    "/media/works/detail_7_2.webp",
+    "/media/works/detail_7_1.webp"
+  ],
+  "order": 70
+}
