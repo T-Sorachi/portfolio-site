@@ -1184,6 +1184,7 @@ main {
 
 .work-detail__description p {
   margin: 0;
+  white-space: pre-line;
   font-size: 16px;
   font-weight: 500;
   line-height: 36px;

@@ -1,0 +1,88 @@
+media:
+  input: public/media/works
+  output: /media/works
+  rename: random
+  extensions: [jpg, jpeg, png, webp, avif, gif, svg]
+
+content:
+  - name: works
+    label: 作品と活動
+    type: collection
+    path: content/works
+    format: json
+    filename:
+      template: "{year}{month}{day}-{hour}{minute}{second}.json"
+      field: false
+    view:
+      primary: title
+      fields: [title, category, order]
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: heroImage
+        label: メイン写真
+        type: image
+        required: true
+        description: 一覧と詳細ページの先頭に表示する写真を選ぶか、アップロードしてください。
+      - name: description
+        label: 説明
+        type: text
+        description: 活動や作品について自由に書いてください。空行を入れると段落を分けられます。
+      - name: detailImages
+        label: 追加の写真
+        type: image
+        description: 必要な場合だけ追加してください。写真の順番も変更できます。
+        options:
+          multiple:
+            max: 30
+          unique: true
+      - name: category
+        label: 分類
+        type: select
+        description: 空欄の場合はProjectとして表示します。
+        options:
+          values:
+            - name: Project
+              label: プロジェクトや活動
+            - name: Graphic design
+              label: グラフィックデザイン
+            - name: Editorial design
+              label: エディトリアルデザイン
+            - name: Web design
+              label: Webデザイン
+            - name: UI/UX design
+              label: UIやUXのデザイン
+            - name: Speaker
+              label: 登壇
+            - name: Program
+              label: 研修やプログラム
+      - name: period
+        label: 取り組んだ期間
+        type: string
+      - name: role
+        label: 担当したこと
+        type: string
+      - name: tool
+        label: 使用したツール
+        type: string
+      - name: location
+        label: 場所
+        type: string
+      - name: projectScale
+        label: 活動の規模
+        type: string
+      - name: className
+        label: 授業名
+        type: string
+      - name: order
+        label: 表示順
+        type: number
+        description: 小さい数字ほど上に表示します。空欄や0は先頭です。先頭3件はトップページにも表示します。
+        options:
+          min: 0
